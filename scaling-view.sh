@@ -4,7 +4,7 @@
 echo "Por favor, digite o nome do usuário:"
 read user
 # Baixar git
-sudo apt install git
+sudo apt install git -y
 # Clonar o repositório
 echo "Clonando o repositório..."
 git clone https://github.com/nicolasyassuda/scaling-view.git /home/$user/scaling-view
