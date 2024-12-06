@@ -5,7 +5,7 @@ echo "Por favor, digite o nome do usuário:"
 read user
 
 
-sudo apt update
+sudo apt update -y
 # Baixar git
 sudo apt install git -y
 # Clonar o repositório
