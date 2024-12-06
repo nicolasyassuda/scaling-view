@@ -43,7 +43,7 @@ def contar_pods(node_name: str, label_selector: str, kubeconfig_path: str = None
     return len(pods.items)
 
 if __name__ == "__main__":
-    NOME_DO_NO = "cluster-m5"
+    NOME_DO_NO = "cluster-m7"
     LABEL_SELECTOR = "app=site-comp-nuvem"
 
     CAMINHO_KUBECONFIG = os.getenv('KUBECONFIG', None)  # Usa a variável de ambiente KUBECONFIG se definida
