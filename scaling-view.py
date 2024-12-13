@@ -54,19 +54,16 @@ if __name__ == "__main__":
             kubeconfig_path=CAMINHO_KUBECONFIG
         )
 
-        if numero_de_pods > 0:
-            for pixel in range(numero_de_pods):
-                # Calcula os valores de r, g, b. Assegure-se de que os valores estão dentro de 0-255
-                r = int(255 * 0.125 * numero_de_pods)
-                g = int(255 * 0.125 * numero_de_pods)
-                b = int(255 * 0.125 * numero_de_pods)
-
+        for pixel in range(8):
+            # Calcula os valores de r, g, b. Assegure-se de que os valores estão dentro de 0-255
+            r = int(255 * 0.125 * numero_de_pods)
+            g = int(255 * 0.125 * numero_de_pods)
+            b = int(255 * 0.125 * numero_de_pods)
+            if(pixel<=numero_de_pods):
                 set_pixel(pixel, r, g, b)
                 show()
-                sleep(2)
-        else:
-            for pixel in range(8):
+            else:
                 set_pixel(pixel, 0, 0, 0)
                 show()
-                sleep(2)
+
 
