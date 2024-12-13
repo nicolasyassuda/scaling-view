@@ -59,7 +59,7 @@ if __name__ == "__main__":
             r = int(255 * 0.125 * numero_de_pods)
             g = int(255 * 0.125 * numero_de_pods)
             b = int(255 * 0.125 * numero_de_pods)
-            if(pixel<=numero_de_pods):
+            if(pixel<numero_de_pods):
                 set_pixel(pixel, r, g, b)
                 show()
             else:
