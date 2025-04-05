@@ -1,3 +1,4 @@
+  GNU nano 4.8                                                                                                                                                                                                                         scaling-view.py                                                                                                                                                                                                                                    
 from kubernetes import client, config
 from kubernetes.client.rest import ApiException
 import os
@@ -42,10 +43,10 @@ def contar_pods(node_name: str, label_selector: str, kubeconfig_path: str = None
     return len(pods.items)
 
 if __name__ == "__main__":
-    NOME_DO_NO = "cluster-m7"
-    LABEL_SELECTOR = "app=site-comp-nuvem"
+    NOME_DO_NO = "node4"
+    LABEL_SELECTOR = "app=simple-app"
 
-    CAMINHO_KUBECONFIG = os.getenv('KUBECONFIG', None)  # Usa a variável de ambiente KUBECONFIG se definida
+    CAMINHO_KUBECONFIG = f'/home/{NOME_DO_NO}/k3s.yaml'
 
     while True:
         numero_de_pods = contar_pods(
@@ -53,7 +54,7 @@ if __name__ == "__main__":
             label_selector=LABEL_SELECTOR,
             kubeconfig_path=CAMINHO_KUBECONFIG
         )
-
+        print(numero_de_pods)
         for pixel in range(8):
             # Calcula os valores de r, g, b. Assegure-se de que os valores estão dentro de 0-255
             r = int(255 * 0.125 * numero_de_pods)
@@ -65,5 +66,3 @@ if __name__ == "__main__":
             else:
                 set_pixel(pixel, 0, 0, 0)
                 show()
-
-
