@@ -1,4 +1,3 @@
-  GNU nano 4.8                                                                                                                                                                                                                         scaling-view.py                                                                                                                                                                                                                                    
 from kubernetes import client, config
 from kubernetes.client.rest import ApiException
 import os
