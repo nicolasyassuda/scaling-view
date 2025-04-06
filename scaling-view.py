@@ -42,7 +42,7 @@ def contar_pods(node_name: str, label_selector: str, kubeconfig_path: str = None
     return len(pods.items)
 
 if __name__ == "__main__":
-    NOME_DO_NO = "node4"
+    NOME_DO_NO = os.getenv('NODE', None)
     LABEL_SELECTOR = "app=simple-app"
 
     CAMINHO_KUBECONFIG = f'/home/{NOME_DO_NO}/k3s.yaml'
