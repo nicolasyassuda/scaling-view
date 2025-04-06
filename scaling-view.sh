@@ -40,7 +40,7 @@ Group=$user
 ExecStart=/usr/bin/python3 /home/$user/scaling-view/scaling-view.py
 Restart=always
 RestartSec=10
-Environment=KUBECONFIG=~/kubeconfig
+Environment=NODE=$user
 
 [Install]
 WantedBy=multi-user.target
